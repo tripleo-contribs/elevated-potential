@@ -250,13 +250,17 @@
 			<scope>test</scope>
 		</dependency>
 -->
+
+		<dependency>
+  <groupId>org.checkerframework</groupId>
+  <artifactId>checker-qual</artifactId>
+  <version>3.42.0</version> <!-- You may pick the latest stable version -->
+  <scope>provided</scope>
+</dependency>
+
 	</dependencies>
 
 	<repositories>
-		<repository>
-			<id>central</id>
-			<url>https://repo1.maven.org/maven2/</url>
-		</repository>
 		<repository>
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
