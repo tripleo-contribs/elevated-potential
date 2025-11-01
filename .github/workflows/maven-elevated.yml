@@ -1,7 +1,7 @@
 name: elevated-potential on gh-ci with temurin 17 and maven-wrapper
 
 # `workflow_dispatch` is manually triggered
-# _run and _call as well
+# TODO: _run and _call as well
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
         run: ./mvnw -B test --file pom.xml
 
       - name: Package with Maven
-        run: ./mvnw -B package --file pom.xml
+        run: ./mvnw -B package -DskipTests --file pom.xml
 
       # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
       - name: Update dependency graph
