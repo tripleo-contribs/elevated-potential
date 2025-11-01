@@ -4,7 +4,7 @@ name: elevated-potential on gh-ci with temurin 17 and maven-wrapper
 # TODO: _run and _call as well
 
 on:
-  push:
+  #push:
   pull_request:
   workflow_dispatch:
 
