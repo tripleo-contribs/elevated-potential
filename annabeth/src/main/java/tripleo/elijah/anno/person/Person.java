@@ -1,18 +1,17 @@
-package com.baeldung.annotation;
+package tripleo.elijah.anno.person;
 
-//import com.baeldung.annotation.processor.BuilderProperty;
+import tripleo.elijah.automatic_anno.BuilderProperty;
 
+@SuppressWarnings("LombokGetterMayBeUsed")
 public class Person {
-
     private int age;
-
     private String name;
 
     public int getAge() {
         return age;
     }
 
-//    @BuilderProperty
+    @BuilderProperty
     public void setAge(int age) {
         this.age = age;
     }
@@ -21,9 +20,8 @@ public class Person {
         return name;
     }
 
-//    @BuilderProperty
+    @BuilderProperty
     public void setName(String name) {
         this.name = name;
     }
-
 }
