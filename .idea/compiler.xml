@@ -18,6 +18,7 @@
         <module name="elevated-potential-core-api" />
         <module name="elevated-potential-core-impl" />
         <module name="elevated-potential-core-api0" />
+        <module name="annabeth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
