@@ -45,6 +45,12 @@
 	<dependencies>
 
 		<dependency>
+			<groupId>com.github.elijah-tng</groupId>
+			<artifactId>ghel-model-status</artifactId>
+			<version>5dd4c4c71f</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.github.elijah-team.radical-paradox</groupId>
 			<artifactId>annotation-processing</artifactId>
 			<version>0caa8de714</version>
