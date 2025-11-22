@@ -1,50 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>tripleo.elijah</groupId>
 	<artifactId>elevated-potential</artifactId>
-	<version>2024.elevated-potential.2</version>
 	<packaging>pom</packaging>
+	<version>2024.elevated-potential.2</version>
 	<name>elevated-potential</name>
 	<url>http://github.com/elijah-lang/elevated-potential</url>
 
 	<properties>
-		<annotations.version>26.0.2-1</annotations.version>
-		<antlr-runtime.version>3.5.3</antlr-runtime.version>
-		<auto-service-annotations.version>1.1.1</auto-service-annotations.version>
-		<buffers.version>3038ff102c</buffers.version>
-		<checker-qual.version>3.42.0</checker-qual.version>
-		<clojure.version>1.12.3</clojure.version>
-		<commons-codec.version>1.19.0</commons-codec.version>
-		<commons-lang3.version>3.19.0</commons-lang3.version>
-		<downloadSources>true</downloadSources>
-		<guava.version>33.5.0-jre</guava.version>
 		<!-- <project.build.outputTimestamp>1</project.build.outputTimestamp> -->
+
 		<java.version>17</java.version>
-		<javax.annotation-api.version>1.3.2</javax.annotation-api.version>
-		<jctools-core.version>4.0.5</jctools-core.version>
-		<jdeferred-core.version>2.0.0</jdeferred-core.version>
-		<jdeferred.version>2.0.0</jdeferred.version>
-		<jdepend-maven-plugin.version>2.1</jdepend-maven-plugin.version>
-		<lombok.version>1.18.42</lombok.version>
-		<maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-		<mockito-core.version>5.20.0</mockito-core.version>
-		<mutiny.version>2.8.0</mutiny.version>
-		<org.eclipse.jdt.annotation.version>2.3.100</org.eclipse.jdt.annotation.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!--<kotlin.version>1.9.22</kotlin.version>-->
-		<!--<org.eclipse.xtend.lib.version>2.31.0.M3</org.eclipse.xtend.lib.version>-->
-		<!--<xtend-maven-plugin.version>2.31.0.M3</xtend-maven-plugin.version>-->
-		<radical-paradox.version>annot.25-11-06.fix</radical-paradox.version>
-		<range.version>0.0.3b</range.version>
-		<reactive-streams.version>1.0.4</reactive-streams.version>
-		<rxjava.version>3.1.10</rxjava.version>
-		<slf4j-api.version>2.1.0-alpha1</slf4j-api.version>
-		<slf4j-simple.version>2.1.0-alpha1</slf4j-simple.version>
-		<spotbugs-annotations.version>4.9.3</spotbugs-annotations.version>
+
+		<downloadSources>true</downloadSources>
+
+		<guava.version>33.5.0-jre</guava.version>
+
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+		<jdeferred.version>2.0.0</jdeferred.version>
+
+		<!--
+		<kotlin.version>1.9.22</kotlin.version>
+
+		<org.eclipse.xtend.lib.version>2.31.0.M3</org.eclipse.xtend.lib.version>
+		<xtend-maven-plugin.version>2.31.0.M3</xtend-maven-plugin.version>
+		-->
 	</properties>
 
 	<modules>
@@ -56,57 +43,95 @@
 	</modules>
 
 	<dependencies>
+
 		<dependency>
-			<!--
-			<groupId>tripleo.util.range</groupId>
-			<artifactId>range-v1</artifactId>
-			<version>${range.version}</version>
-			-->
-			<groupId>com.gitlab.Tripleo</groupId>
-			<artifactId>range</artifactId>
-			<version>${range.version}</version>
+			<groupId>com.github.elijah-team.radical-paradox</groupId>
+			<artifactId>annotation-processing</artifactId>
+			<version>0caa8de714</version>
 		</dependency>
 		<dependency>
-			<groupId>com.github.elijah-team</groupId>
-			<artifactId>radical-paradox</artifactId>
-			<version>${radical-paradox.version}</version>
+			<groupId>com.github.elijah-team.radical-paradox</groupId>
+			<artifactId>annotations-mustache</artifactId>
+			<version>0caa8de714</version>
 		</dependency>
+
 		<dependency>
-			<groupId>com.github.spotbugs</groupId>
-			<artifactId>spotbugs-annotations</artifactId>
-			<version>${spotbugs-annotations.version}</version>
-			<scope>compile</scope>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr-runtime</artifactId>
+			<version>3.5.3</version>
 		</dependency>
-		<!--
+
 		<dependency>
-		<groupId>com.github.spotbugs</groupId>
-		<artifactId>spotbugs-annotations</artifactId>
-		<version>4.7.3</version>
+			<groupId>io.smallrye.reactive</groupId>
+			<artifactId>mutiny</artifactId>
+			<version>2.8.0</version>
 		</dependency>
-		-->
+
+
+		<dependency>
+			<groupId>org.clojure</groupId>
+			<artifactId>clojure</artifactId>
+			<version>1.12.3</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.20.0</version>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>com.gitlab.tripleo1</groupId>
 			<artifactId>buffers</artifactId>
-			<version>${buffers.version}</version>
+			<version>3038ff102c</version>
 		</dependency>
-		<!--
+
 		<dependency>
-		<groupId>org.jetbrains.kotlin</groupId>
-		<artifactId>kotlin-stdlib-jdk8</artifactId>
-		<version>${kotlin.version}</version>
+			<groupId>com.gitlab.Tripleo</groupId>
+			<artifactId>range</artifactId>
+			<version>0.0.3b</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
-		<groupId>org.jetbrains.kotlin</groupId>
-		<artifactId>kotlin-test-junit</artifactId>
-		<version>${kotlin.version}</version>
-		<scope>test</scope>
+			<groupId>org.eclipse.jdt</groupId>
+			<artifactId>org.eclipse.jdt.annotation</artifactId>
+			<version>2.3.100</version>
+			<scope>compile</scope>
 		</dependency>
-		-->
+
 		<dependency>
-			<groupId>com.google.auto.service</groupId>
-			<artifactId>auto-service-annotations</artifactId>
-			<version>${auto-service-annotations.version}</version>
-			<optional>true</optional>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.19.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>2.1.0-alpha1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.1.0-alpha1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.spotbugs</groupId>
+			<artifactId>spotbugs-annotations</artifactId>
+			<version>4.9.3</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -114,127 +139,61 @@
 			<version>${guava.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>${commons-codec.version}</version>
-		</dependency>
-		<!--
-		<dependency>
-		<groupId>org.eclipse.xtend</groupId>
-		<artifactId>org.eclipse.xtend.lib</artifactId>
-		<version>${org.eclipse.xtend.lib.version}</version>
-		</dependency>
-		<dependency>
-		<groupId>org.eclipse.xtend</groupId>
-		<artifactId>org.eclipse.xtend.core</artifactId>
-		<version>${org.eclipse.xtend.lib.version}</version>
-		</dependency>
-		-->
-		<!--
-		<dependency>
-		<groupId>com.tngtech.archunit</groupId>
-		<artifactId>archunit-junit4</artifactId>
-		<version>1.3.0</version>
-		<scope>test</scope>
-		</dependency>
-		-->
+
 		<dependency>
 			<groupId>io.reactivex.rxjava3</groupId>
 			<artifactId>rxjava</artifactId>
-			<version>${rxjava.version}</version>
+			<version>3.1.10</version>
 		</dependency>
+
 		<dependency>
-			<groupId>io.smallrye.reactive</groupId>
-			<artifactId>mutiny</artifactId>
-			<version>${mutiny.version}</version>
+			<groupId>org.reactivestreams</groupId>
+			<artifactId>reactive-streams</artifactId>
+			<version>1.0.4</version>
 		</dependency>
+
 		<dependency>
-			<groupId>javax.annotation</groupId>
-			<artifactId>javax.annotation-api</artifactId>
-			<version>${javax.annotation-api.version}</version>
-			<scope>compile</scope>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.19.0</version>
 		</dependency>
+
 		<dependency>
-			<groupId>org.antlr</groupId>
-			<artifactId>antlr-runtime</artifactId>
-			<version>${antlr-runtime.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>${commons-lang3.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<!--
-		<dependency>
-		<groupId>org.junit.jupiter</groupId>
-		<artifactId>junit-jupiter</artifactId>
-		<version>5.11.0</version>
-		<scope>test</scope>
-		</dependency>
-		-->
-		<dependency>
-			<groupId>org.checkerframework</groupId>
-			<artifactId>checker-qual</artifactId>
-			<version>${checker-qual.version}</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.42</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.clojure</groupId>
-			<artifactId>clojure</artifactId>
-			<version>${clojure.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jdt</groupId>
-			<artifactId>org.eclipse.jdt.annotation</artifactId>
-			<version>${org.eclipse.jdt.annotation.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jctools</groupId>
-			<artifactId>jctools-core</artifactId>
-			<version>${jctools-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jdeferred.v2</groupId>
 			<artifactId>jdeferred-core</artifactId>
-			<version>${jdeferred-core.version}</version>
+			<version>2.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains</groupId>
 			<artifactId>annotations</artifactId>
-			<version>${annotations.version}</version>
+			<version>26.0.2-1</version>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito-core.version}</version>
-			<scope>test</scope>
+			<groupId>com.google.auto.service</groupId>
+			<artifactId>auto-service-annotations</artifactId>
+			<version>1.1.1</version>
+			<optional>true</optional>
 		</dependency>
+
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
+			<groupId>org.jctools</groupId>
+			<artifactId>jctools-core</artifactId>
+			<version>4.0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker-qual</artifactId>
+			<version>3.42.0</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.reactivestreams</groupId>
-			<artifactId>reactive-streams</artifactId>
-			<version>${reactive-streams.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j-api.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>${slf4j-simple.version}</version>
-			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
@@ -247,45 +206,10 @@
 
 	<build>
 		<plugins>
-			<!--
-			<plugin>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok-maven-plugin</artifactId>
-				<version>1.18.20.0</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>delombok</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			-->
-			<!--
-			<plugin>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>xtend-maven-plugin</artifactId>
-				<version>${xtend-maven-plugin.version}</version>
-
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>testCompile</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/xtend-gen/main</outputDirectory>
-							<testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
+				<version>3.14.1</version>
 				<executions>
 					<execution>
 						<id>default-compile</id>
@@ -313,6 +237,7 @@
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
+					<release>17</release>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -336,16 +261,10 @@
 					</reportSet>
 				</reportSets>
 			</plugin>
-		</plugins>
-	</reporting>
-	-->
-	<!--
-	<reporting>
-		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jdepend-maven-plugin</artifactId>
-				<version>${jdepend-maven-plugin.version}</version>
+				<version>2.1</version>
 			</plugin>
 		</plugins>
 	</reporting>
